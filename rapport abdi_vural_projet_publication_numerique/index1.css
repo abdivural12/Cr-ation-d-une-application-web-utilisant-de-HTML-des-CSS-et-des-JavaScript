@@ -1,0 +1,50 @@
+
+
+body{
+	margin:0; 
+	padding:0; 
+	background-color: rgb(192, 192, 192); 
+	font-family: lucida sans unicode;
+	font-size:20px
+	}
+h1{
+	font-size:22px;
+	border-top-style: none;
+	border-bottom-style: solid;
+	border-right-style: none;
+	border-left-style: none;
+	}
+	
+h2{
+	font-size:17px}
+	
+p{
+	font-size: 15px
+	}
+	
+div.box{
+	margin : 2.5% 21% 1% 21%;
+	padding: 1% 1% 0.5% 2%;
+	height: 3%;
+	background-color: rgb(255, 255, 255);
+	font-size: 30px;
+	font-weight:bold;
+	text-align:center;
+	}
+	
+
+div.content {
+	margin : 2% 21% 1% 21%;
+	padding: 0.5% 2% 4% 2%;
+	height: 10%;
+	background-color: rgb(255, 255, 255);
+	font-size: 16px;
+	}
+div.footer{
+	margin: 2% 21% 1% 21%;
+	padding: 0.5% 2% 0.5% 0.5%;
+	height: 25px;
+	background-color: rgb(235, 227, 239);
+	font-size: 16px;
+	text-align: right;
+	}
