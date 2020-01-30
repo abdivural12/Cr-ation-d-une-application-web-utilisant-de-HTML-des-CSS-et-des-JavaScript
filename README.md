@@ -1,4 +1,5 @@
-# Creation-d-une-application-web-utilisant-de-HTML-des-CSS-et-des-JavaScript
+# Creation d'une application web utilisant de HTML des CSS et des JavaScript
+
 1.Introduction
 
 Ce projet a été réalisé dans le cadre du cours Publication Numérique afin qu’appliquer les méthodologies et les notions enseignées dans la création d’une application web.
