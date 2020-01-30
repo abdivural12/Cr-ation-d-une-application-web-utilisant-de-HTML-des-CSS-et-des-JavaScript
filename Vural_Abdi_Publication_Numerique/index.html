@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Livres</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
+
+
+
+
+</head>
+<body>
+	<div class="col-md-12" style="margin:0px;padding:0px;">
+		<div class="col-xs-3" style="cursor:pointer;background:#2C3E50;color:White;padding:10px;text-align:center;font-size:16px;">
+			<a href="javascript:window.close();"><span class="glyphicon glyphicon-off" aria-hidden="true"></span><br>Fermer</a>
+		</div>
+		<div class="col-xs-3" style="cursor:pointer;background:#2C3E50;color:White;padding:10px;text-align:center;font-size:16px;border-left:1px solid #22313F;">
+			    <span class="label label-danger" id="watch_ount" style="background:#22313F;padding:4px;">0</span><br>Mes Livres
+		</div>
+		<div class="col-xs-3"  data-toggle="modal" data-target=".bs-example-modal-md" style="cursor:pointer;background:#2C3E50;color:White;padding:10px;text-align:center;font-size:16px;border-left:1px solid #22313F;border-right:1px solid #22313F;">
+			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span><br>Ajouter
+		</div>
+		<div class="col-xs-3" style="cursor:pointer;background:#2C3E50;color:White;padding:10px;text-align:center;font-size:16px;">
+      <a class="shared" href="#">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=example.org" target="_blank"><span class="glyphicon glyphicon-share" aria-hidden="true"></span><br>Partager
+  
+</a>
+      </a>
+		</div>
+	</div>
+	<div class="col-md-12" style="background:#22313F;height:3px"></div>
+	<table class="table table-bordered" width="100%">
+		<thead>
+			<tr class="active">
+				<td align="">Les Livres</td>
+				<td align="center">Informations</td>
+				<td align="center">Parametres</td>
+				<td align="center">Supprimer</td>
+			</tr>
+		</thead>
+			<tbody id="livre_list"></tbody><!-- grace àscript.js on écris notre liste de livre  !-->
+	</table>
+
+  <!-- ekleme işlemi -->
+  <div class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-xs">
+      <div class="modal-content">
+  		<div class="container" style="padding:10px;">
+  				<table>
+  					<tr>
+  						<td style="padding:3px;">Livre</td>
+  						<td><input type="text" id="livre_name" class="form-control" placeholder="Quels livres avez vous lu ?"></td>
+  						<td style="padding:3px;text-align:right;">
+								<button class="insert glyphicon glyphicon-plus" onclick="livre_insert();"></button>
+								<button class="clear  glyphicon glyphicon-erase" onclick="insert_clear_btn();"></button>
+  						</td>
+					
+  					</tr>
+					
+					<tr>
+					<td style="padding:3px;">Ecrivain</td>
+  						<td><input type="text" id="ecrivain_name" class="form-control" placeholder="Ecrire le nom de l'ecrivain"></td>
+  						<td style="padding:3px;text-align:right;">
+								
+  						</td>
+					
+					
+					</tr>
+					
+					
+					
+					
+						<tr>
+							<td style="padding:3px;">La Date</td>
+							<td><input type="date" class="form-control" id="date_inf"></td>
+						</tr>
+  					<tr>
+  						<td></td>
+  						<td colspan="2" id="description" class="null-description"></td>
+  					</tr>
+  					<tr>
+  						<td colspan="3">Que pensez vous de ce livre ?</td>
+  					</tr>
+            <tr>
+  						<td colspan="3"><textarea id="livre_description" class="form-control" rows="5" placeholder="Vos opinios à propos du livre"></textarea></td>
+  					</tr>
+  				</table>
+  		</div>
+      </div>
+			<div class="close-btn" data-dismiss="modal" style="text-align:center;font-size:18px;font-weight:bold;padding:10px;background:#fff;color:#666;margin-top:10px;border-radius:5px;cursor:pointer;">
+				Fermer
+			</div>
+    </div>
+  </div>
+  <!-- La fin de la fonction d'ajouter -->
+
+	<!-- Modifier -->
+	<div class="modal fade update-comment" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+		<div class="modal-dialog modal-xs">
+			<div class="modal-content">
+				<div class="container" style="padding:10px;">
+						<table>
+							<tr>
+								<td style="padding:3px;">Livre</td>
+								<td><input type="text" id="livre_name_update" class="form-control" placeholder="livre adını düzenleyin"></td>
+								<td style="padding:3px;text-align:right;">
+									<input type="hidden" id="hidden_update_id">
+									<button class="insert glyphicon glyphicon-refresh" onclick="update();"></button>
+									<button class="clear  glyphicon glyphicon-erase" onclick="update_clear_btn();"></button>
+								</td>
+							</tr>
+							
+							<tr>
+					<td style="padding:3px;">Ecrivain</td>
+  						<td><input type="text" id="ecrivain_name_update" class="form-control" placeholder="Changer le nom de ecrivain"></td>
+  						<td style="padding:3px;text-align:right;">
+								
+  						</td>
+					
+					
+					</tr>
+							
+							<tr>
+								<td style="padding:3px;">La Date</td>
+								<td><input type="date" class="form-control" id="date_inf_update"></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td colspan="2" id="description_update" class="null-description"></td>
+							</tr>
+							<tr>
+								<td colspan="3">Que pensez vous de ce livre</td>
+							</tr>
+							<tr>
+								<td colspan="3"><textarea id="livre_description_update" class="form-control" rows="5" placeholder="Modifier vos opinions"></textarea></td>
+							</tr>
+						</table>
+						
+				</div>
+			</div>
+			<div class="close-btn" data-dismiss="modal" style="text-align:center;font-size:18px;font-weight:bold;padding:10px;background:#fff;color:#666;margin-top:10px;border-radius:5px;cursor:pointer;">
+				Fermer
+			</div>
+		</div>
+	</div>
+	<!-- La fin de Modifier -->
+
+	<!-- La fenetre d'infrormations quand on clique le button d'information-->
+	<div class="modal fade detail" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" style="margin-top:10%;">
+		<div class="modal-dialog modal-xs">
+			<div class="modal-content">
+			<div id="livre_description_div" class="container" style="padding:10px;"></div>
+			<!-- <div id="ecrivain_description_div" class="container" style="padding:10px;"></div> -->
+			</div>
+			<div class="close-btn" data-dismiss="modal" style="text-align:center;font-size:18px;font-weight:bold;padding:10px;background:#fff;color:#666;margin-top:10px;border-radius:5px;cursor:pointer;">
+				Fermer
+			</div>
+		</div>
+	</div>
+	<!-- La fin de button d'informations-->
+	<!-- <caption align="bottom"><b><i><font face="Times New Roman">MyLivres</i></b></caption> -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>

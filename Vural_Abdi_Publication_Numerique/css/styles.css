@@ -1,0 +1,53 @@
+.name-class {padding-left: 48px;}
+.insert{background-color:#42a35a;color:#fff;padding:5px 10px;border: 0px solid;border-radius:3px;color:#fff;height: 30px;line-height: 0px;}
+.clear{background-color:#42a35a;color:#fff;padding:5px 10px;border: 0px solid;border-radius:3px;color:#fff;height: 30px;line-height: 0px;}
+.insert:focus{outline: 0;}
+
+a.shared {
+	text-decoration: none;
+	color: #fff;
+}
+.null-description {color:#555;font-weight: bold;}
+.description{
+	  background-color:#f0ad4e;
+ 	  padding: .2em .6em .3em;
+	  font-size: 90%;
+	  color: #fff;
+	  border-radius: .25em;
+		cursor: pointer;
+	}
+
+.update{
+	  background-color:#337ab7;
+ 	  padding: .2em .6em .3em;
+	  font-size: 90%;
+	  color: #fff;
+	  border-radius: .25em;
+		cursor: pointer;
+	}
+
+.delete{
+	  background-color:#d9534f;
+ 	  padding: .2em .6em .3em;
+	  font-size: 90%;
+	  color: #fff;
+	  border-radius: .25em;
+		cursor: pointer;
+	}
+	
+body {	
+	background-image: 
+url("C:/Users/abdi/Desktop/Vural_Abdi_Publication_Numerique/myLivres.png"); 
+background-repeat: no-repeat; 
+background-position: center bottom; 
+background-attachment: fixed
+	
+}
+	
+
+
+	
+	
+	
+	
+	
